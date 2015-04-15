@@ -8,7 +8,8 @@ public class Fourier1 : MonoBehaviour
 				Linear,
 				Exponential,
 				Parabola,
-				Sine
+				Sine,
+				Fourier,
 		}
 
 		public Function function;
@@ -19,7 +20,8 @@ public class Fourier1 : MonoBehaviour
 		Linear,
 		Exponential,
 		Parabola,
-		Sine
+		Sine,
+		Fourier,
 		};
 
 		[Range(10,1000)]
@@ -118,5 +120,16 @@ public class Fourier1 : MonoBehaviour
 		static float Sine (float x)
 		{
 				return 0.5f + 0.5f * Mathf.Sin (2 * Mathf.PI * x + Time.timeSinceLevelLoad);
+		}
+
+		static float Fourier (float x)
+		{
+				float a0 = 0.5f;
+				float a1 = 0.5f * Mathf.Cos (2 * Mathf.PI * 1 * x);
+				float b1 = 0.2f * Mathf.Sin (2 * Mathf.PI * 1 * x);
+				float a2 = 0.8f * Mathf.Cos (2 * Mathf.PI * 2 * x);
+				float b2 = 0.3f * Mathf.Sin (2 * Mathf.PI * 2 * x);
+
+				return (a0 + a1 + a2 + b1 + b2);
 		}
 }
