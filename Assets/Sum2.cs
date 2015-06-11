@@ -8,12 +8,12 @@ public class Sum2 : MonoBehaviour
 
 	void Start ()
 	{
-		Func<float,float> f = Gravity;
+//		Func<float,float> f = Gravity;
 	}
 
 	float Integral (float upper, Func<float,float> f, float delta)
 	{
-
+		return 1f;
 	}
 
 	float Gravity (float dt)
