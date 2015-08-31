@@ -91,7 +91,7 @@ public class Fourier1 : MonoBehaviour
 			
 			
 		}
-		particleSystem.SetParticles (point, point.Length);
+		GetComponent<ParticleSystem>().SetParticles (point, point.Length);
 	}
 
 	//リニア
